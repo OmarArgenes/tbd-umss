@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+                <div class="sidebar ">
+                  <a href="index.html" class="active">INMOBILIARIA <i class="bi bi-houses"></i></a>
+
+                   
+                    <a class="dropdown-item" href="#">REGISTRAR CLIENTE</a>
+                    <a class="dropdown-item" href="#">REGISTRAR REQUIRIMIENTOS</a>
+                    <a class="dropdown-item"  href="#" onclick="mostrarTabla()">VER CLIENTES</a>
+
+                  </div>
+
+                
+                  <div class="col-md-9 ">
+        <!-- Aquí irá el contenido principal de la página -->
+        <div id="tabla-clientes" class="text-center" style="display: none; position: absolute;">
+          <div class="form-group">
+          <table class="table table custom-table table-hover table-fixed">
+            <thead>
+              <tr style="width: 350px">
+                <th style="width: 150px">Nombre</th>
+                <th style="width: 150px">Carnet</th>
+                <th style="width: 150px">Direccion</th>
+                <th style="width: 150px">Correo</th>
+                                
+              </tr>
+            </thead>
+            <tbody id="tabla-clientes-body" >
+              <!-- Aquí se agregarían las filas de la tabla con los datos dinámicamente -->
+            
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="imagen-principal">
+        <img src="imagenes/1.jpg" alt="Descripción de la imagen">
+      </div>
+      </div>
+      
+    
+    
+  </div>
+</div>
+    
+     
+
+  <div id="modal-registrar-cliente" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Registrar Cliente</h2>
+      <form id="formulario-registro">
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+
+        <label for="carnet">Carnet:</label>
+        <input type="text" id="carnet" name="carnet"> 
+
+        <label for="direccion">Direccion:</label>
+        <input type="text" id="direccion" name="direccion">
+            
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo">
+  
+      
+  
+        <button type="submit">Guardar</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-registrar-requerimientos" class="modal">
+    <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Registros Generales</h2>
+          <form id="formulario-registro1">
+            <div class="form-row">
+              
+            <div class="form-group">
+              <label for="cliente">Ci Cliente:</label>
+              <input type="text" id="cliente" name="cliente">
+            </div>
+              <div class="form-group">
+                <label for="codrequerimiento">Cod Requerimiento:</label>
+                <input type="text" id="codrequerimiento" name="codrequerimiento">
+              </div>
+               <div class="form-group">
+            <label for="inmueble">Tipo inmueble:</label>
+            <input type="text" id="inmueble" name="inmueble">
+          </div>
+       
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+        <label for="oferta">Tipo de Oferta:</label>
+        <input type="text" id="oferta" name="oferta">
+      </div>
+        <div class="form-group">
+        <label for="zona">Zona:</label>
+        <input type="text" id="zona" name="zona">
+      </div>
+      <div class="form-group">
+        <label for="superficie">Superfecie:</label>
+        <input type="text" id="superficie" name="superficie">
+      </div>
+
+    </div>
+
+   
+    <div class="form-row">
+      <div class="form-group">
+    <label for="presupuesto">Presupuesto Min:</label>
+    <input type="text" id="presupuesto" name="presupuesto">
+  </div>
+  <div class="form-group">
+    <label for="presupuestom">Presupuesto Max:</label>
+    <input type="text" id="presupuestom" name="presupuestom">
+  </div>
+ 
+</div>
+
+<h2>Registros Especificos</h2>
+
+  <div class="form-row">
+    <div class="form-group">
+  <label for="dormitorios">Nro de Dormitorios:</label>
+  <input type="text" id="dormitorios" name="dormitorios">
+</div>
+  <div class="form-group">
+  <label for="plantas">Nro de Plantas:</label>
+  <input type="text" id="plantas" name="plantas">
+</div>
+</div>
+
+<div class="form-row">
+  <div class="form-group">
+<label for="comedores">Nro de Comedores:</label>
+<input type="text" id="comedores" name="comedores">
+</div>
+<div class="form-group">
+<label for="pisos">Nro de Pisos:</label>
+<input type="text" id="pisos" name="pisos">
+</div>
+</div>
+
+          <div class="form-row">
+            <div class="form-group">
+          <label for="cocinas">Nro de Cocinas:</label>
+          <input type="text" id="cocinas" name="cocinas">
+          </div>
+          <div class="form-group">
+          <label for="baños">Nro de Baños:</label>
+          <input type="text" id="baños" name="baños">
+          </div>
+          </div>
+
+          <div class ="form-row">
+          <div class="form-group">
+            <label for="salas">Nro de Salas:</label>
+            <input type="text" id="salas" name="salas">
+            </div>
+          <div class="form-group">
+            <label for="piscina">¿Tiene piscina?</label>
+            <div class="form-check form-check-inline">
+              <input type="radio" id="piscina-si" name="piscina" value="si" class="form-check-input">
+              <label class="form-check-label" for="piscina-si">Sí</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" id="piscina-no" name="piscina" value="no" class="form-check-input">
+              <label class="form-check-label" for="piscina-no">No</label>
+            </div>
+          </div>
+          </div>
+
+      <div class ="form-row">
+        <div class="form-group">
+          <label for="garaje">Nro de Garajes:</label>
+          <input type="text" id="garaje" name="garaje">
+          </div>
+        <div class="form-group">
+          <label for="animales">¿Permite Animales?</label>
+          <div class="form-check form-check-inline">
+            <input type="radio" id="animales-si" name="animales" value="si" class="form-check-input">
+            <label class="form-check-label" for="animales">Sí</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" id="animales-no" name="animales" value="no" class="form-check-input">
+            <label class="form-check-label" for="animales-no">No</label>
+          </div>
+        </div>
+        </div>
+
+            <button type="submit">Guardar</button>
+          </form>
+    </div>
+  </div>
+
+  
+
+
+
+  <script src="script.js"></script>
+  
+</body>
+</html>
