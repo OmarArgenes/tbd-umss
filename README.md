@@ -1,6 +1,6 @@
 # Real Estate Client Registry (UMSS, 2023)
 
-University project from the database workshop course at Universidad Mayor de San Simón (UMSS).
+University project at Universidad Mayor de San Simón (UMSS).
 
 Frontend for a small real estate office to register clients and their property requirements, and to list registered clients.
 
